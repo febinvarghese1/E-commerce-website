@@ -1,0 +1,123 @@
+@use "./product" as p;
+
+.cart {
+
+
+    &--nav{
+        padding: 20px;
+        font-size: 1.8rem;
+    }
+    &--error{
+        text-align: center;
+        margin-top: 100px;
+        text-transform: uppercase;
+        font-weight: 200;
+    }
+
+  &__contain {
+    &_card {
+      display: flex;
+      margin-top: 30px;
+      box-shadow: 3px 4px 10px rgba(0,0,0,0.2);
+     margin-inline: 20px;
+      padding-block: 20px;
+      &_img {
+        flex: 1;
+        & img{
+            width: 400px;
+            height: 300px;
+            object-fit: contain;
+        }
+      }
+      &_details {
+          flex: 2;
+          &_items{
+              margin-top: 20px;
+              & h4{
+                margin-top: 10px;
+                color: gray;
+                font-weight: 600;
+                font-size: 2rem;
+              }
+              
+              &--button{
+                display: flex;
+                align-items: center;
+                & span{
+                    padding: 10px;
+                    font-size: 1.4rem;
+                }
+
+                & button{
+                    padding: 6px 15px;
+                    cursor: pointer;
+                    background-color: white;
+                    border: .5px solid black;
+                }
+              }
+              
+              
+              &--flex{
+                width: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & div{
+                    display: flex;
+                    align-items: center;
+                    & i{
+                        font-size: 1.2rem;
+                        transition: all .3 ease;
+                        cursor: pointer;
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
+                    & span{
+                        font-size: 1.1rem;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+
+            & h3{
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                padding-block:10px;
+            }
+            & p{
+                width: 800px;
+            }
+
+            &--btn {
+                @extend .product__right_bottom;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                & h1, & span{
+                    padding-bottom: 20px;
+                    text-transform: uppercase;
+                    font-weight: 200;
+
+                }
+                & span{
+                    color: rgb(34, 33, 33);
+                    text-transform: uppercase;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                &--checkout{
+                display: flex;
+                margin-bottom: 40px;
+                justify-content: center;
+                }
+            }
+
+        }
+      }
+
+    }
+  }
+}

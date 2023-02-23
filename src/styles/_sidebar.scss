@@ -1,0 +1,68 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  flex-direction: column;
+  padding: 15px;
+  width: 16vw;
+  border-right: 0.5px solid gray;
+  &__top {
+      font-size: 4rem;
+    }
+    
+    &__center {
+      padding-left: 20px;
+    font-family: sans-serif;
+    & h3 {
+      text-transform: uppercase;
+      font-size: 1rem;
+      padding-bottom: 10px;
+    }
+    & div {
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+    & input {
+      margin-right: 10px;
+    }
+    &_discount {
+      & p {
+        padding-top: 10px;
+        cursor: pointer;
+      }
+    }
+    &_range {
+      & section {
+        display: flex;
+        align-items: center;
+
+        & input{
+            color: black;
+        }
+
+
+        & label{
+            padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 40px;
+    & button{
+        padding: 10px 40px;
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 20px;
+        transition: all .5s ease;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+  }
+}
