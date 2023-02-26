@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
-import { GlobalState } from "../context/GlobalContext";
+import { GlobalState } from "../../context/GlobalContext";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoMdGitCompare } from "react-icons/io";
-const SingleCart = ({ product }) => {
-  const { setTotalPrice, deleteCartItems, setTotalFunc } =
+const SingleCart = ({ product,setTotalFunc }) => {
+  const {  deleteCartItems} =
     useContext(GlobalState);
   const [cartVal, setCartVal] = useState(1);
 
@@ -24,10 +24,10 @@ const SingleCart = ({ product }) => {
         <section className="cart__contain_card_details_items cart__contain_card_details_items--button">
           <button
             onClick={() => {
-              if (cartVal !== 0) {
+              if (cartVal > 1) {
                 setTotalFunc(product.price, cartVal, "less");
               }
-              return setCartVal((prev) => (prev > 0 ? prev - 1 : 0));
+              return setCartVal((prev) => (prev > 1 ? prev - 1 : 1));
             }}
           >
             -
@@ -62,12 +62,15 @@ const SingleCart = ({ product }) => {
         <section className="cart__contain_card_details_items">
           <h3>Category: {product.category}</h3>
         </section>
-        <section className="cart__contain_card_details_items">
-          <h3>Description</h3>
-          <p>{product.description.slice(0, 250) + " ..."}</p>
-        </section>
+        
         <section className="cart__contain_card_details_items cart__contain_card_details_items--btn">
-          <button onClick={() => deleteCartItems(product.id, product)}>
+          <button
+            onClick={() => {
+              setTotalFunc(product.price, cartVal, "less");
+
+              return deleteCartItems(product.id, product);
+            }}
+          >
             remove from cart
           </button>
         </section>

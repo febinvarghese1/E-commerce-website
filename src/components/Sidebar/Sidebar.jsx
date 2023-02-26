@@ -1,14 +1,13 @@
-import React, { useState, useContext } from "react";
-import { GlobalState } from "../context/GlobalContext";
+import React, { useState, useContext, useCallback } from "react";
+import { GlobalState } from "../../context/GlobalContext";
 import { IoLogoPolymer } from "react-icons/io";
 
 const Sidebar = () => {
-  const {  setCategory } = useContext(GlobalState);
-  const {filterPrice,setFilterPrice,setOrder,range,setRange} = useContext(GlobalState)
-  const handleCheckHandler = (e) => {
-    let value = e.target.value;
-    setCategory(value);
-  };
+  const { setOrderFunc,handleCheckHandler,checkFilterPrice,range,setRangeFunc } =
+    useContext(GlobalState);
+
+   
+ 
 
   return (
     <div className="sidebar">
@@ -62,19 +61,39 @@ const Sidebar = () => {
         <div className="sidebar__center_filter">
           <h3>Filters</h3>
           <section>
-            <input type="checkbox" id="20"  value="20" onChange={e => e.target.checked && setFilterPrice(e.target.value)}/>
+            <input
+              type="checkbox"
+              id="20"
+              value="20"
+              onChange={checkFilterPrice}
+            />
             <label htmlFor="20">Under 20</label>
           </section>
           <section>
-            <input type="checkbox" id="50"  value="50" onChange={e => e.target.checked && setFilterPrice(e.target.value)}/>
+            <input
+              type="checkbox"
+              id="50"
+              value="50"
+              onChange={checkFilterPrice}
+            />
             <label htmlFor="50">Under 50</label>
           </section>
           <section>
-            <input type="checkbox" id="100" value="100" onChange={e => e.target.checked && setFilterPrice(e.target.value)} />
+            <input
+              type="checkbox"
+              id="100"
+              value="100"
+              onChange={checkFilterPrice}
+            />
             <label htmlFor="100">Under 100</label>
           </section>
           <section>
-            <input type="checkbox" id="200" value="200" onChange={e => e.target.checked && setFilterPrice(e.target.value)}/>
+            <input
+              type="checkbox"
+              id="200"
+              value="200"
+              onChange={checkFilterPrice}
+            />
             <label htmlFor="200">Under 200</label>
           </section>
         </div>
@@ -82,11 +101,23 @@ const Sidebar = () => {
         <div className="sidebar__center_price">
           <h3>Filters the prices</h3>
           <section>
-            <input type="radio" id="asc" value="asc" name="price" onChange={e => setOrder(e.target.value)} />
+            <input
+              type="radio"
+              id="asc"
+              value="asc"
+              name="price"
+              onChange={setOrderFunc}
+            />
             <label htmlFor="asc">Price Low to High</label>
           </section>
           <section>
-            <input type="radio" id="dsc" value="dsc" name="price" onChange={e => setOrder(e.target.value)}/>
+            <input
+              type="radio"
+              id="dsc"
+              value="dsc"
+              name="price"
+              onChange={setOrderFunc}
+            />
             <label htmlFor="dsc">Price High to Low</label>
           </section>
         </div>
@@ -95,11 +126,14 @@ const Sidebar = () => {
           <h3>Select the range</h3>
           <section>
             <label>0</label>
-            <input type="range" list="values" min={0} step={10} max={200} onChange={e=> {
-              setFilterPrice(range)
-              return setRange(e.target.value)
-            }
-             } />
+            <input
+              type="range"
+              list="values"
+              min={0}
+              step={10}
+              max={200}
+              onChange={setRangeFunc}
+            />
             <label>{range}</label>
           </section>
         </div>

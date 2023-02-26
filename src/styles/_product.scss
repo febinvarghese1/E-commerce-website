@@ -90,13 +90,12 @@
 
 
 .loading{
-  width: 100%;
   height: 80vh;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: 80%;
 
   &-animation{
     font-size: 3rem;

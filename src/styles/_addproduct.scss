@@ -1,0 +1,122 @@
+.addproduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: all 1s ease;
+  z-index: 1;
+  background-image: url("https://images.unsplash.com/photo-1475403614135-5f1aa0eb5015?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  background-repeat: no-repeat;
+
+  &--nav{
+    color: white;
+    font-size: 2.2rem;
+    text-align: center;
+    cursor: pointer;
+    
+    padding-inline: 10px;
+    margin-left: 40px;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &--contain {
+    box-shadow: 3px 5px 10px rgba(255, 255, 255, 0.3);
+    background-color: white;
+    border-radius: 30px;
+    padding-top: 10px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__form {
+    width: 60%;
+padding-bottom: 30px;
+    margin-top: 30px;
+    background-color: white;
+    
+
+    &_items {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      margin-left: 30px;
+      &:nth-child(1) {
+        margin-top: 20px;
+      }
+
+      & label {
+        padding-bottom: 10px;
+      }
+      &--file {
+        & input {
+          font-size: 0.8rem !important;
+
+          cursor: pointer;
+        }
+      }
+
+      & input,
+      & textarea {
+        width: 80%;
+        padding-block: 3px;
+        outline: none;
+        font-size: 1.2rem;
+      }
+      & button {
+        width: 30%;
+        padding: 10px 30px;
+        border: 0.5px solid black;
+        background-color: white;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        border-radius: 10px;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index:1;
+  background-color: white;
+  border-radius: 20px;
+
+  &__container {
+    width: 500px;
+    height: 500px;
+    box-shadow: 3px 3px 13px rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & h1 {
+      text-transform: uppercase;
+      font-weight: 200;
+      letter-spacing: 3px;
+    }
+
+    & i {
+      margin-top: 40px;
+      font-size: 4rem;
+      color: green;
+    }
+  }
+}

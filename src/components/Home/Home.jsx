@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "./Header";
-import bg from "../../IMG-4.jpg";
+import Header from "../pages/Header";
 import Slider from "./Slider";
 import HomeProduct from "./HomeProduct";
-import Footer from "./Footer";
+import Footer from "../pages/Footer";
 const Home = () => {
   return (
     <div className="home">

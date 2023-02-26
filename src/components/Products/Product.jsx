@@ -1,14 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState  } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import heroImage from "../../placeholder.png";
-import Header from "./Header";
-import { GlobalState } from "../context/GlobalContext";
+import heroImage from "../../../placeholder.png";
+import Header from "../pages/Header";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import AddToCartSingle from "../Cart/AddToCartSingle";
 
 const Product = () => {
-  const { addCartItems } = useContext(GlobalState);
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   let { id } = useParams();
@@ -25,6 +24,10 @@ const Product = () => {
     fetchSingleData(id);
    
   }, []);
+
+
+  
+
 
   return (
     <div className="product">
@@ -74,11 +77,7 @@ const Product = () => {
               <span>Category: {product.category}</span>
               <p>price: ${product.price}</p>
             </div>
-            <div className="product__right_bottom">
-              <button onClick={() => addCartItems(product.id, product)}>
-                Add to cart
-              </button>
-            </div>
+           <AddToCartSingle product={product} />
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useState } from "react";
 
 export const GlobalState = createContext(null);
 
@@ -7,9 +7,8 @@ export const ContextProvider = ({ children }) => {
   const [count, setCount] = useState(0);
   const [category, setCategory] = useState("");
   const [filterPrice, setFilterPrice] = useState(1000);
-  const [order,setOrder] = useState("");
-  const [range,setRange] = useState(200);
-  const [totalPrice,setTotalPrice] = useState(0);
+  const [order, setOrder] = useState("");
+  const [range, setRange] = useState(200);
 
   const addCartItems = (id, product) => {
     setCount((prev) => prev + 1);
@@ -25,12 +24,30 @@ export const ContextProvider = ({ children }) => {
     setFilteredProduct(filtered);
   };
 
+  const handleCheckHandler = (e) => {
+    let value = e.target.value;
+    setCategory(value);
+  };
+  const checkFilterPrice = (e) => {
+    if (e.target.checked) {
+      setFilterPrice(e.target.value);
+    }
+  };
+  const setOrderFunc = (e) => {
+    setOrder(e.target.value);
+  };
 
-  const setTotalFunc = (price, cart, operation) =>{
-    operation == 'add' ?  setTotalPrice(prev => prev + (price)) : setTotalPrice(prev => prev - (price));
-  }
-  
+  const getCount = useCallback(() => {
+    return count;
+  }, [count]);
 
+
+const setRangeFunc = (e) =>{
+  setFilterPrice(range);
+  setRange(e.target.value);
+}
+
+ 
 
   const contextValue = {
     count,
@@ -40,14 +57,15 @@ export const ContextProvider = ({ children }) => {
     category,
     setCategory,
     filterPrice,
-    setFilterPrice,
+    checkFilterPrice,
     order,
     setOrder,
     range,
+    setOrderFunc,
+    handleCheckHandler,
     setRange,
-    totalPrice,
-    setTotalPrice,
-    setTotalFunc
+    getCount,
+    setRangeFunc
   };
 
   return (

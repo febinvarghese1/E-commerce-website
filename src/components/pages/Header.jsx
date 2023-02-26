@@ -4,13 +4,11 @@ import {
   AiOutlineInstagram,
   AiOutlineFacebook,
   AiOutlineTwitter,
-  AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
-import { GlobalState } from "../context/GlobalContext";
+import CartIcon from "../Cart/CartIcon";
 
 const Header = () => {
-  const { count } = useContext(GlobalState);
 
   return (
     <div className="header">
@@ -45,10 +43,10 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/contact"
+              to="/add"
               style={{ textDecoration: "none", color: "white" }}
             >
-              contact
+              Add
             </NavLink>
           </li>
         </ul>
@@ -64,21 +62,12 @@ const Header = () => {
           <i>
             <AiOutlineInstagram />
           </i>
-          <i className="cart--container">
-            <NavLink to="/cart" style={{ color: "white" }}>
-              <AiOutlineShoppingCart />
-            </NavLink>
 
-            {count > 0 && (
-              <div className="cart--icon">
-                <span>{count}</span>
-              </div>
-            )}
-          </i>
+          <CartIcon />
         </div>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default React.memo(Header);
