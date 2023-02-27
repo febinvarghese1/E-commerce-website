@@ -1,8 +1,7 @@
 import React from "react";
-import { IoMdSearch } from "react-icons/io";
+import { AiOutlineSearch } from "react-icons/ai";
 
-
-const ProductInput = ({setSearchInput}) => {
+const ProductInput = ({ setSearchInput }) => {
   return (
     <div>
       <div className="productList__container_right--input">
@@ -10,8 +9,12 @@ const ProductInput = ({setSearchInput}) => {
           type="text"
           onChange={(e) => setSearchInput(e.target.value)}
           placeholder="Search ..."
+        
         />
-        <IoMdSearch />
+        <i>
+          <AiOutlineSearch />
+        </i>
+        
       </div>
     </div>
   );

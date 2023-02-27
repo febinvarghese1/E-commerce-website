@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Products/Card";
+import Flex from "./Flex";
+import Floating from "./Floating";
+import Slider from "./Slider";
 const HomeProduct = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
 
@@ -12,12 +15,7 @@ const HomeProduct = () => {
   useEffect(() => {
     fetchApi();
   }, []);
-  const silderImages = [
-    "https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&w=800",
-  ];
+ 
 
   return (
     <div className="homeproduct">
@@ -32,6 +30,8 @@ const HomeProduct = () => {
         </section>
       </div>
 
+      <Floating />
+
       <div className="homeproduct__today">
         <h1>Deals Today</h1>
         <section className="homeproduct__today--contain">
@@ -42,6 +42,8 @@ const HomeProduct = () => {
           </div>
         </section>
       </div>
+      <h1 className="homeproduct__heading">Popular on shopkart</h1>
+      <Flex />
     </div>
   );
 };

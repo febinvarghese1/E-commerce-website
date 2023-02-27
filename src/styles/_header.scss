@@ -5,10 +5,13 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  box-shadow: 3px 4px 10px rgba(192, 190, 190, 0.5);
   padding-bottom: 15px;
   padding-top: 10px;
-  background-color: rgb(38, 36, 36);
+  // background-color: rgb(38, 36, 36);
+  z-index: 10;
+  position: absolute;
+  top: 0;
+
   color: rgba(255, 255, 255, 0.9);
 
   &__left {
@@ -41,7 +44,7 @@
         list-style: none;
         cursor: pointer;
         font-size: 1rem;
-        text-transform: uppercase;
+        text-transform: capitalize;
         transition: all 0.3s ease;
       }
     }

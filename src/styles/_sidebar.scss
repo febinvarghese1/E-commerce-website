@@ -1,17 +1,29 @@
 .sidebar {
   display: flex;
   align-items: center;
-  min-height: 90vh;
+  min-height: 100vh;
   flex-direction: column;
   padding: 15px;
   width: 16vw;
   border-right: 0.5px solid gray;
+  accent-color: #8f00ff;
+
+
+  & input[type="radio"] {
+    border: 0.5px solid black;
+    color: red;
+    font-size: 2rem;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+  }
   &__top {
-      font-size: 4rem;
-    }
-    
-    &__center {
-      padding-left: 20px;
+    font-size: 4rem;
+    margin-top: 60px;
+  }
+
+  &__center {
+    padding-left: 20px;
     font-family: sans-serif;
     & h3 {
       text-transform: uppercase;
@@ -25,10 +37,17 @@
     & input {
       margin-right: 10px;
     }
+
     &_discount {
       & p {
         padding-top: 10px;
         cursor: pointer;
+      }
+    }
+    &_filter{
+      & section{
+        
+        margin-top: 10px;
       }
     }
     &_range {
@@ -36,13 +55,12 @@
         display: flex;
         align-items: center;
 
-        & input{
-            color: black;
+        & input {
+          color: black;
         }
 
-
-        & label{
-            padding-right: 10px;
+        & label {
+          padding-right: 10px;
         }
       }
     }
@@ -50,19 +68,19 @@
 
   &__bottom {
     margin-top: 40px;
-    & button{
-        padding: 10px 40px;
-        color: white;
-        background-color: black;
-        border: none;
-        border-radius: 20px;
-        transition: all .5s ease;
-        cursor: pointer;
-        text-transform: uppercase;
+    & button {
+      padding: 10px 40px;
+      color: white;
+      background-color: black;
+      border: none;
+      border-radius: 20px;
+      transition: all 0.5s ease;
+      cursor: pointer;
+      text-transform: uppercase;
 
-        &:hover{
-            transform: scale(1.1);
-        }
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

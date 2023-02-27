@@ -1,4 +1,5 @@
 import React,{useContext,useState} from "react";
+import { IoMdBasket } from "react-icons/io";
 import { GlobalState } from "../../context/GlobalContext";
 
 const AddToCart = ({product}) => {
@@ -18,8 +19,8 @@ const AddToCart = ({product}) => {
     <div className="card__button">
       <button onClick={cartFunctionality}>
         {btn ? <span>Added!</span> : <span>Add to cart</span>}
+        <i><IoMdBasket /></i>
       </button>
-      <button>buy now</button>
     </div>
   );
 };

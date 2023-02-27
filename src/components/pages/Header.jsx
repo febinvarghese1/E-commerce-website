@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { IoLogoPolymer } from "react-icons/io";
+import { IoLogoPolymer, IoMdNotifications } from "react-icons/io";
 import {
   AiOutlineInstagram,
   AiOutlineFacebook,
@@ -53,14 +53,9 @@ const Header = () => {
       </div>
       <div className="header__right">
         <div className="header__right_container">
+        
           <i>
-            <AiOutlineFacebook />
-          </i>
-          <i>
-            <AiOutlineTwitter />
-          </i>
-          <i>
-            <AiOutlineInstagram />
+            <IoMdNotifications />
           </i>
 
           <CartIcon />

@@ -33,7 +33,7 @@ const ProductList = () => {
 
   const visibleHandler = () => {
     setBtn(!btn);
-    setVisible((prev) => (prev === 3 ? prev * 6 : 3));
+    setVisible((prev) => (prev === 3 ? prev * 8 : 3));
   };
 
   const sortFunction = (a, b) => {

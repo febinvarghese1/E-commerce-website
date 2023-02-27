@@ -37,9 +37,9 @@ export const ContextProvider = ({ children }) => {
     setOrder(e.target.value);
   };
 
-  const getCount = useCallback(() => {
+  const getCount = () => {
     return count;
-  }, [count]);
+  }
 
 
 const setRangeFunc = (e) =>{

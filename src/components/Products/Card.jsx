@@ -6,32 +6,35 @@ import heroImage from "../../../placeholder.png";
 import AddToCart from "../Cart/AddToCart";
 
 const Card = ({ product }) => {
-  
-  
   return (
-      <div className="card">
-        <NavLink to={`/product/${product.id}`}>
-          <div className="card__image">
+    <div className="card">
+      <NavLink to={`/product/${product.id}`}>
+        <div className="card__image">
           <LazyLoadImage
-              src={product?.image}
-              width={200}
-              height={200}
-              placeholderSrc={heroImage}
-            />
-          </div>
-          <div className="card__details">
-            <h1>{product?.title?.slice(0, 35) + "...."}</h1>
-            <section>
-              <span>$ {product?.price}</span>
-              <span>
-                <AiFillStar />
-                <i>{product?.rating?.rate}</i>
-              </span>
-            </section>
-          </div>
-        </NavLink>
+            src={product?.image}
+            width={200}
+            height={200}
+            placeholderSrc={heroImage}
+          />
+        </div>
+        <div className="card__details">
+          <h1>{product?.title?.slice(0, 35) + "...."}</h1>
+          <span>
+            <i>
+              <AiFillStar />
+            </i>
+            <p>{product?.rating?.rate}</p>
+          </span>
+        </div>
+      </NavLink>
+      <section className="card__price">
+        <span className="card__price--price">$ {product?.price}</span>
+        <div className="card__price_btn">
         <AddToCart product={product} />
-      </div>
+
+        </div>
+      </section>
+    </div>
   );
 };
 

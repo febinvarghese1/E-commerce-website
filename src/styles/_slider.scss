@@ -2,7 +2,7 @@
     overflow: hidden;
     width: 100vw;
     position: relative;
-    height: calc(100vh - 25px);
+    height: calc(100vh - 20vh);
 
 
     &__container{
@@ -15,7 +15,7 @@
             width: 100vw;
             height: 100%;
             object-fit: cover;
-            background-position: top;
+            object-position: top;
         }
     }
     &__icons{
