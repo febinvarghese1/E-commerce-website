@@ -8,9 +8,15 @@ const FilteredCarts = () => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const setTotalFunc = (price, cart, operation) => {
-    operation == "add"
-      ? setTotalPrice((prev) => prev + price)
-      : setTotalPrice((prev) => prev - price);
+    if (operation == "add") {
+      setTotalPrice((prev) => prev + price);
+    }
+    if (operation == "lessFull") {
+      setTotalPrice((prev) => prev - (price * cart));
+    } 
+    if(operation == "less"){
+      setTotalPrice((prev) => prev - price);
+    }
   };
   return (
     <div>

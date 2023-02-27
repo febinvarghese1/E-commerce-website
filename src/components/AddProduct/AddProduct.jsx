@@ -31,6 +31,9 @@ const AddProduct = () => {
             <AiOutlineLeft />
           </i>
         </NavLink>
+        <div className="addproduct__image">
+        <img />
+        </div>
         {modal ? (
           <div className="modal">
             <div className="modal__container">

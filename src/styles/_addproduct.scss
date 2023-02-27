@@ -5,16 +5,18 @@
   flex-direction: column;
   min-height: 100vh;
   transition: all 1s ease;
+  margin-top: 80px;
   z-index: 1;
-  background-image: url("https://images.unsplash.com/photo-1475403614135-5f1aa0eb5015?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  color: black;
   background-repeat: no-repeat;
+  margin-bottom: 50px;
 
-  &--nav{
+  &--nav {
     color: white;
     font-size: 2.2rem;
     text-align: center;
     cursor: pointer;
-    
+
     padding-inline: 10px;
     margin-left: 40px;
   }
@@ -22,25 +24,24 @@
   &__heading {
     text-transform: uppercase;
     font-weight: 400;
+    margin-left: 50px;
   }
 
   &--contain {
-    box-shadow: 3px 5px 10px rgba(255, 255, 255, 0.3);
-    background-color: white;
+  box-shadow: 4px 5px 10px rgba(143, 0, 255, 0.68);
+    padding-left: 30px;
+    color: white;
     border-radius: 30px;
     padding-top: 10px;
-    width: 50vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   &__form {
     width: 60%;
-padding-bottom: 30px;
+    padding-bottom: 30px;
     margin-top: 30px;
-    background-color: white;
-    
 
     &_items {
       display: flex;
@@ -68,12 +69,19 @@ padding-bottom: 30px;
         padding-block: 3px;
         outline: none;
         font-size: 1.2rem;
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid white;
+        outline: none;
+        color: white;
+        padding-bottom: 20px;
       }
       & button {
         width: 30%;
         padding: 10px 30px;
-        border: 0.5px solid black;
-        background-color: white;
+        border: 2px solid #8F00FF;
+        background: black;
+        color: white;
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -92,7 +100,7 @@ padding-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index:1;
+  z-index: 1;
   background-color: white;
   border-radius: 20px;
 

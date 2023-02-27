@@ -1,6 +1,5 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useContext  } from "react";
 import { GlobalState } from "../../context/GlobalContext";
-import { IoLogoPolymer } from "react-icons/io";
 
 const Sidebar = () => {
   const { setOrderFunc,handleCheckHandler,checkFilterPrice,range,setRangeFunc } =
@@ -12,7 +11,6 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <IoLogoPolymer />
       </div>
       <div className="sidebar__center">
         <div className="sidebar__center_discount">

@@ -10,6 +10,14 @@ const FormComp = ({setModal}) => {
 
   const handleFileHandler = (e) => {
     setFile(e.target.files[0]);
+    let filer = new FileReader();
+    let image = e.target.files;
+    filer.onload = ()=>{
+
+      const data = file.result;
+      console.log(data);
+    }
+    filer.readAsDataURL(image[imageFile]);
   };
   const PostApi = async () => {
     const response = await fetch("http://localhost:5500/products", {
@@ -29,6 +37,7 @@ const FormComp = ({setModal}) => {
     const data = await response.json();
 
     console.log(data);
+    console.log(file);
   };
 
   console.log(product);
@@ -46,35 +55,35 @@ const FormComp = ({setModal}) => {
 
   return (
     <div className="addproduct--contain">
-      <h1 className="addproduct__heading">Add a Product!</h1>
+      <h1 className="addproduct__heading">Add a Product</h1>
       <form action="" onSubmit={submitHandler} className="addproduct__form">
         <div className="addproduct__form_items">
-          <label>Enter The Title</label>
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             type="text"
+            placeholder="Enter The Title"
           />
         </div>
         <div className="addproduct__form_items">
-          <label>Enter The Category</label>
           <input
             value={category}
             type="text"
             onChange={(e) => setCategory(e.target.value)}
+            placeholder="Enter the Category"
           />
         </div>
         <div className="addproduct__form_items">
-          <label>Enter The Price</label>
           <input
             value={price}
             type="number"
             onChange={(e) => setPrice(e.target.value)}
+            placeholder="Enter the price"
           />
         </div>
         <div className="addproduct__form_items">
           <label>Enter The description</label>
-          <textarea value={desc} onChange={(e) => setDesc(e.target.value)} />
+          <textarea value={desc} onChange={(e) => setDesc(e.target.value)} placeholder="Enter the description" />
         </div>
         <div className="addproduct__form_items addproduct__form_items--file">
           <label>

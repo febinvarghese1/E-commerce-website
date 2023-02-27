@@ -3,7 +3,7 @@ import { GlobalState } from "../../context/GlobalContext";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoMdGitCompare } from "react-icons/io";
 const SingleCart = ({ product,setTotalFunc }) => {
-  const {  deleteCartItems} =
+  const {  deleteCartItems } =
     useContext(GlobalState);
   const [cartVal, setCartVal] = useState(1);
 
@@ -66,8 +66,7 @@ const SingleCart = ({ product,setTotalFunc }) => {
         <section className="cart__contain_card_details_items cart__contain_card_details_items--btn">
           <button
             onClick={() => {
-              setTotalFunc(product.price, cartVal, "less");
-
+              setTotalFunc(product.price, cartVal, "lessFull");
               return deleteCartItems(product.id, product);
             }}
           >

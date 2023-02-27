@@ -1,4 +1,4 @@
-import React,{useContext,useState} from "react";
+import React,{useContext,useEffect,useState} from "react";
 import { IoMdBasket } from "react-icons/io";
 import { GlobalState } from "../../context/GlobalContext";
 
@@ -14,6 +14,13 @@ const AddToCart = ({product}) => {
   const toggleBtn = () => {
     setBtn(true);
   };
+
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setBtn(false);
+    },3000) 
+  },[btn])
 
   return (
     <div className="card__button">

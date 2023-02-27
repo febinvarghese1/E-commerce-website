@@ -14,6 +14,10 @@ const ProductList = () => {
 
   const [products, setProducts] = useState([]);
   console.log(order);
+
+
+
+  //used to fetch data from the api
   const fetchApi = async () => {
     setLoading(true);
 
@@ -27,15 +31,19 @@ const ProductList = () => {
   };
   console.log(products);
 
+
+  //fetch the api whenever the category changes
   useEffect(() => {
     fetchApi();
   }, [category]);
 
+  //read more functionality
   const visibleHandler = () => {
     setBtn(!btn);
     setVisible((prev) => (prev === 3 ? prev * 8 : 3));
   };
 
+  //sorting function when ascending (low) and descending (high) 
   const sortFunction = (a, b) => {
     if (order == "asc") {
       return a.price - b.price;

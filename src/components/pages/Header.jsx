@@ -42,7 +42,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
+            <NavLink 
               to="/add"
               style={{ textDecoration: "none", color: "white" }}
             >
